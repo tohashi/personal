@@ -2,4 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  section#main-content
+    p
+      a(href='/form') New Entry
+    ul
+      for item in items
+        li.post #{item.text}
+
+  footer
+    nav
+
+  include templates/about
