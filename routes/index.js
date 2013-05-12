@@ -3,7 +3,7 @@ var Post = model.Post;
 
 exports.index = function(req, res) {
   Post.find({}, function(err, items) {
-    res.render('index', {title: 't9m workplace', items: items});
+    res.render('index', {title: 't93 workplace', items: items});
   });
 };
 
@@ -22,7 +22,3 @@ exports.create = function(req, res) {
     }
   });
 };
-
-exports.enchant = function(req, res) {
-  res.render('enchant', {title: 'enchant.js', js: '/javascripts/game.js'});
-}
