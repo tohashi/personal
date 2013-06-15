@@ -1,15 +1,13 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
-
-var app = express();
+var express = require('express'),
+    routes = require('./routes'),
+    user = require('./routes/user'),
+    http = require('http'),
+    path = require('path'),
+    app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -27,6 +25,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Routing
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/form', routes.form);

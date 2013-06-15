@@ -1,5 +1,5 @@
-var model = require('../model');
-var Post = model.Post;
+var model = require('../model'),
+    Post = model.Post;
 
 exports.webapps = require('./webapps');
 
