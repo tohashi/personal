@@ -32,6 +32,12 @@ app.get('/users', user.list);
 app.get('/form', routes.form);
 app.post('/create', routes.create);
 
+// Applications
+app.get('/webapps', routes.webapps.index);
+
+// Scraping Test
+app.get('/webapps/scraping', routes.webapps.scraping.index);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

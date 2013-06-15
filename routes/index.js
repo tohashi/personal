@@ -1,6 +1,8 @@
 var model = require('../model');
 var Post = model.Post;
 
+exports.webapps = require('./webapps');
+
 exports.index = function(req, res) {
   Post.find({}, function(err, items) {
     res.render('index', {title: 't93 workplace', items: items});
@@ -22,3 +24,4 @@ exports.create = function(req, res) {
     }
   });
 };
+
