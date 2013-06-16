@@ -3,16 +3,7 @@ html
   head
     meta(name='viewport', content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no')
     title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script
-      var require = {
-        urlArgs: 'bust=' + (new Date()).getTime()
-      };
+    link(rel='stylesheet', href='/stylesheets/common.css')
 
-    unless (js)
-      js = '/javascripts/main.js'
-    script(type='text/javascript', src='/javascripts/lib/require.js', data-main=js, async)
   body
     block content
