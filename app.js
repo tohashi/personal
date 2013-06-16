@@ -7,7 +7,7 @@ var express = require('express'),
     user = require('./routes/user'),
     http = require('http'),
     path = require('path'),
-    sass = require('node-sass'),
+    lessMiddleware = require('less-middleware'),
     app = express();
 
 app.configure(function(){
@@ -19,12 +19,12 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.use(sass.middleware({
-        src:   'public/scss',
-        dest:  path.join(__dirname, 'public/css/'),
-        debug: true
+    app.use(lessMiddleware({
+        src:  __dirname + '/public/less',
+        dest: __dirname + '/public/css',
+        prefix: '/css'
     }));
+    app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
