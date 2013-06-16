@@ -7,9 +7,8 @@
   },
   "dependencies": {
     "express": "3.1.0",
-    "mongoose": "*",
-    "jade": "*",
-    "grunt": "*"
+    "mongoose": "~3.6.11",
+    "jade": "~0.31.2"
   },
   "repository": {
     "type": "git",
