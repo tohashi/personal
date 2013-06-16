@@ -5,7 +5,7 @@ exports.webapps = require('./webapps');
 
 exports.index = function(req, res) {
   Post.find({}, function(err, items) {
-    res.render('index', {title: 't93 workplace', items: items});
+    res.render('index', {title: 'sandbox', items: items});
   });
 };
 
