@@ -1,1 +1,19 @@
 extends ../../layout
+
+block javascripts
+  script(type='text/javascipt', src='/javascripts/webapps/scraping/main.js')
+
+block content
+  h1= title
+
+  section#main-content
+    ul
+      for num in [1, 2, 3, 4, 5]
+        li
+          a(href='./scraping/page#{num}') page#{num}
+
+  div#modal-dialog-button open modal dialog
+
+  div#modal1.dialog.hidden
+    div.close close
+
