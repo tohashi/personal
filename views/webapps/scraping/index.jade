@@ -3,7 +3,7 @@ extends ../../layout
 block stylesheets
   link(rel='stylesheet', href='/css/scraping-main.css')
 block javascripts
-  script(type='text/javascipt', src='/javascripts/webapps/scraping/main.js')
+  script(type='text/javascript', src='/javascripts/webapps/scraping/main.js')
 
 block content
   h1= title
@@ -14,8 +14,9 @@ block content
         li
           a(href='./scraping/page#{num}') page#{num}
 
-  div#modal-dialog-button open modal dialog
+  div.button-dialog(data-dialog-name='test-1') open
 
-  div#modal1.dialog.hidden
-    div.close close
+  div.dialog.hidden(data-dialog-name='test-1')
+    div.dialog-box
+        div.button-close close
 
