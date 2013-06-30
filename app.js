@@ -7,6 +7,7 @@ var express = require('express'),
     user = require('./routes/user'),
     http = require('http'),
     path = require('path'),
+    _ = require('lodash'),
     lessMiddleware = require('less-middleware'),
     app = express();
 
@@ -42,6 +43,12 @@ app.get('/webapps', routes.webapps.index);
 
 // Scraping Test
 app.get('/webapps/scraping', routes.webapps.scraping.index);
+_.times(5, function(num) {
+    num++;
+    app.get('/webapps/scraping/page' + num, function(req, res) {
+        routes.webapps.scraping.page(num, req, res);
+    });
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

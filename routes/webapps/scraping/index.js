@@ -5,3 +5,10 @@ exports.index = function(req, res) {
   });
 };
 
+exports.page = function(num, req, res) {
+  res.render('./webapps/scraping/page', {
+      title: 'page' + num,
+      currentPath: req.url 
+  });
+};
+
